@@ -241,6 +241,41 @@ end
 
 ## S Function
 
+### S Function简介
+
+S-Function是system-function系统函数的缩写，是指采用非图形化的方式描述的一个功能模块，即用户
+编写程序满足自己的模型需求
+
+**特点:**
+
+可以使用多种语言进行编写比如 M，C，C++;能够响应Simulink求解器，可以开发新的Simulink模块
+扩展Simulink功能。M文件的S-function可以扩展图形能力，C-MEX的S-function可以提供与操作系统的接口
+可以与已有的代码相结合进行仿真;采用文本方式输入复杂的系统方程
+
+![image](https://github.com/tqlnb/MatlabStudy/assets/88382462/d54479b4-a7c7-4a65-aebd-0a405d2927b8)
+
+![image](https://github.com/tqlnb/MatlabStudy/assets/88382462/0f409702-4a5b-49f8-a7b2-f2ad154935fa)
+![image](https://github.com/tqlnb/MatlabStudy/assets/88382462/baff93d4-2269-4be7-a163-e61c4a70843c)
+![image](https://github.com/tqlnb/MatlabStudy/assets/88382462/5a0067eb-62f4-490f-b6a6-7645a2c193d2)
+
+ 1. s-function name: 填入S-function的函数名称，这样就建立了S-function模块与M文件形式的S-function之间的对应关系，需将程序放到当前路径下;
+ 2. S-function parameters:填入S-function需要输入的外部参数的名称，如果有对各变量则变量中间用逗号隔开，如a，b，c;
+ 3. S-function modules;仅当S-function是用C语言编写并用MEX工具编译的C-MEX文件时才需要填写该参数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
