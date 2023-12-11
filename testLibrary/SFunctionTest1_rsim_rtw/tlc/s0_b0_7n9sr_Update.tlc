@@ -1,0 +1,32 @@
+%implements s0_b0_7n9sr_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcUpdateFcnOfS0B0 = OpaqueTLCBlockFcn("Update", 0, 0, 0, 3, 0)
+%assign tlcUpdateFcnOfS0B2 = OpaqueTLCBlockFcn("Update", 0, 2, 0, 3, 1)
+%assign tlcUpdateFcnOfS0B4 = OpaqueTLCBlockFcn("Update", 0, 4, 0, 3, 2)
+%if !WHITE_SPACE(tlcUpdateFcnOfS0B0)
+/* Update for S-Function (cTest3): '<Root>/S-Function2' */
+%<tlcUpdateFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS0B2)
+/* Update for S-Function (Sfunction_Test1): '<Root>/S-Function' */
+%<tlcUpdateFcnOfS0B2>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS0B4)
+/* Update for S-Function (cTest2): '<Root>/S-Function1' */
+%<tlcUpdateFcnOfS0B4>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function UpdateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

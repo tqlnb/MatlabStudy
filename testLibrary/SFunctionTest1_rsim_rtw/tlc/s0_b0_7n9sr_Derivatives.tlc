@@ -1,0 +1,27 @@
+%implements s0_b0_7n9sr_Derivatives "C"
+
+%function Derivatives(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcDerivativesFcnOfS0B0 = OpaqueTLCBlockFcn("Derivatives", 0, 0, 0, 4, 0)
+%assign tlcDerivativesFcnOfS0B4 = OpaqueTLCBlockFcn("Derivatives", 0, 4, 0, 4, 1)
+%if !WHITE_SPACE(tlcDerivativesFcnOfS0B0)
+/* Derivatives for S-Function (cTest3): '<Root>/S-Function2' */
+%<tlcDerivativesFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcDerivativesFcnOfS0B4)
+/* Derivatives for S-Function (cTest2): '<Root>/S-Function1' */
+%<tlcDerivativesFcnOfS0B4>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function DerivativesFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Derivatives(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

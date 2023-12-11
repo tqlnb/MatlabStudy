@@ -1,0 +1,47 @@
+%implements s0_b0_7n9sr_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS0B0 = OpaqueTLCBlockFcn("Terminate", 0, 0, 0, 6, 0)
+%assign tlcTerminateFcnOfS0B2 = OpaqueTLCBlockFcn("Terminate", 0, 2, 0, 6, 1)
+%assign tlcTerminateFcnOfS0B4 = OpaqueTLCBlockFcn("Terminate", 0, 4, 0, 6, 2)
+%assign tlcCleanupRuntimeResourcesFcnOfS0B0 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 0, 0, 0, 6, 3)
+%assign tlcCleanupRuntimeResourcesFcnOfS0B2 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 0, 2, 0, 6, 4)
+%assign tlcCleanupRuntimeResourcesFcnOfS0B4 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 0, 4, 0, 6, 5)
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B0)
+/* Terminate for S-Function (cTest3): '<Root>/S-Function2' */
+%<tlcTerminateFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B2)
+/* Terminate for S-Function (Sfunction_Test1): '<Root>/S-Function' */
+%<tlcTerminateFcnOfS0B2>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B4)
+/* Terminate for S-Function (cTest2): '<Root>/S-Function1' */
+%<tlcTerminateFcnOfS0B4>\
+%endif
+%if !WHITE_SPACE(tlcCleanupRuntimeResourcesFcnOfS0B0)
+/* CleanupRuntimeResources for S-Function (cTest3): '<Root>/S-Function2' */
+%<tlcCleanupRuntimeResourcesFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcCleanupRuntimeResourcesFcnOfS0B2)
+/* CleanupRuntimeResources for S-Function (Sfunction_Test1): '<Root>/S-Function' */
+%<tlcCleanupRuntimeResourcesFcnOfS0B2>\
+%endif
+%if !WHITE_SPACE(tlcCleanupRuntimeResourcesFcnOfS0B4)
+/* CleanupRuntimeResources for S-Function (cTest2): '<Root>/S-Function1' */
+%<tlcCleanupRuntimeResourcesFcnOfS0B4>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%endfunction

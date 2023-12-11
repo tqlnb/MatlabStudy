@@ -1,0 +1,37 @@
+%implements s0_b0_7n9sr_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcInitializeConditionsFcnOfS0B0 = OpaqueTLCBlockFcn("InitializeConditions", 0, 0, 0, 1, 0)
+%assign tlcInitializeConditionsFcnOfS0B2 = OpaqueTLCBlockFcn("InitializeConditions", 0, 2, 0, 1, 1)
+%assign tlcInitializeConditionsFcnOfS0B4 = OpaqueTLCBlockFcn("InitializeConditions", 0, 4, 0, 1, 2)
+%<SLibGetRootInportsFromFile(system, TLC_TRUE)>
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS0B0)
+/* InitializeConditions for S-Function (cTest3): '<Root>/S-Function2' */
+%<tlcInitializeConditionsFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS0B2)
+/* InitializeConditions for S-Function (Sfunction_Test1): '<Root>/S-Function' */
+%<tlcInitializeConditionsFcnOfS0B2>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS0B4)
+/* InitializeConditions for S-Function (cTest2): '<Root>/S-Function1' */
+%<tlcInitializeConditionsFcnOfS0B4>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction
